@@ -1,0 +1,21 @@
+---
+const { url, title } = Astro.props;
+const path = Astro.url.pathname;
+const active = path === url;
+const ariaCurrent = active && 'page';
+import {HTMLAttributes} from 'astro/types';
+interface Props extends HTMLAttributes<'a'> {
+  ariaCurrent?: string;
+  url: string;
+}
+---
+
+<li class="nav-item">
+  <a
+    class:list={['nav-link', { active }]}
+    href={url}
+    aria-current={ariaCurrent}
+  >
+    {title}
+  </a>
+</li>

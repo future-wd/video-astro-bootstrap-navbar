@@ -1,0 +1,15 @@
+---
+const { divider, title, url } = Astro.props;
+---
+
+<li>
+  {
+    divider ? (
+      <hr class="dropdown-divider" />
+    ) : (
+      <a class="dropdown-item" href={url}>
+        {title}
+      </a>
+    )
+  }
+</li>

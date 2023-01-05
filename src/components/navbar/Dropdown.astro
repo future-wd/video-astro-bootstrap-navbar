@@ -1,0 +1,19 @@
+---
+import DropdownItem from './DropdownItem.astro';
+const { title, children } = Astro.props;
+---
+
+<li class="nav-item dropdown">
+  <a
+    class="nav-link dropdown-toggle"
+    href="#"
+    role="button"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+  >
+    {title}
+  </a>
+  <ul class="dropdown-menu">
+    {children.map((child) => <DropdownItem {...child} />)}
+  </ul>
+</li>
